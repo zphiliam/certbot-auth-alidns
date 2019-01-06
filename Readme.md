@@ -18,11 +18,16 @@ ACCESS_KEY_ID = 'your accessKeyId'
 ACCESS_KEY_SECRET = 'your accessSecret'
 ```
 
-# 申请证书
+# 初次申请证书
+- 已经申请了的跳过， 直接看更新
 - -d 后面参数是 具体的域名，可以是泛域名（通配符），也可以是某个具体域名，
 - 如果有多个域名或泛域名。就用多个 -d 参数 -d *.a.com -d *.b.com
 - 支持多级域名如 -d *.x.iot-c.top -d *.iot-c.top 
+
+> 以下命令中的 `/opt/svr/certbot-auth-alidns/auth.sh` 为验证服务脚本的实际全路径，你可能要根据你的clone实际路径修改
+
 ### 测试申请
+- --dry-run 测试的
 - 不会真的申请，但会去DNS添加TXT 记录
 ```bash
 ./certbot-auto certonly  -d *.iot-c.top  --manual --preferred-challenges dns  --manual-auth-hook /opt/svr/certbot-auth-alidns/auth.sh --dry-run

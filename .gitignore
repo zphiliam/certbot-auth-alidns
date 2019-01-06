@@ -1,0 +1,15 @@
+.idea
+*.pyc
+*~
+*.swp
+.DS_Store
+
+# Prevent local commits
+settings.py
+config.py
+worker/config.py
+db.sqlite3
+
+# for django
+*/migrations/*
+!*/migrations/__init__.py
